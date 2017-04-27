@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # AdminUser.create(email: "admin@example.com", password: "password", password_confirmation: "password")
 
-photo_info = [
+photo_info = [ #array of hashes
   {
     :source => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tracy_Caldwell_Dyson_in_Cupola_ISS.jpg/640px-Tracy_Caldwell_Dyson_in_Cupola_ISS.jpg",
     :caption => "Astronaut"
