@@ -1,3 +1,12 @@
-<h1>Selected Photo</h1>
+<h1>Details</h1>
 
-<%= puts new_photo[:source] %>
+<img src="<%= @my_photo.source %>">
+<p>
+<%= @my_photo.caption %>   <!-- # @my_photo is an object -->
+</p>
+
+<a href="http://photos">Back</a>
+
+<a href="http://localhost3000/photos">Back</a>
+<a href="http://localhost3000/photos/<%= @my_photo.id%>/edit">Edit</a>
+<a href="http://localhost3000/delete_photo/<%= @my_photo.id %>">Delete</a>

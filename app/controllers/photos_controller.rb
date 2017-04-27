@@ -5,18 +5,27 @@ class PhotosController < ApplicationController
   end
 
   def create_row
+    url = params[:the_source]
+    cap = params[:the_caption]
+    new_photo = Photo.new
+    new_photo.source = url
+    new_photo.caption = url 
+    new_photo.save
     render("photos/create_row.html.erb")
   end
 
-
   def index
+    @list_of_all_my_photos=Photo.all
     render("photos/index.html.erb")
   end
 
 
 
   def show
+    the_id=params[:id]
+    @my_photo=Photo.find(the_id)
     render("photos/show.html.erb")
+
   end
 
   def edit_form
