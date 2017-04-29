@@ -1,14 +1,32 @@
-<h1>List of Photos</h1>
 
-<% @list_of_all_my_photos.each do |photo_singular| %>
-<!-- equal sign means evaluate and spit out the result in the html -->
-<img src="<%= photo_singular.source %>">
-<p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photogram Golden Seven</title>
+  <style>
+  body{
+    max-width: 900px;
+  }
+  /*p    {color: red;}*/
+  </style>
+</head>
+<body>
+
+  <h1>All Photos</h1>
+
+  <% @list_of_all_my_photos.each do |photo_singular| %>
+  <!-- equal sign means evaluate and spit out the result in the html -->
+  <img src="<%= photo_singular.source %>">
+  <!-- <p>
   <%= photo_singular.caption %>
-</p>
+</p> -->
 <div>
-<a href="http://localhost3000/photos/<%= photo_singular.id%>/edit">Edit</a>
-<a href="http://localhost3000/delete_photo/<%= photo_singular.id %>">Delete</a>
+  <button name="Show Details" type="button" class="btn btn-default btn-lg btn-block">Show Details</button>
+  <button href="http://localhost3000/photos/<%= photo_singular.id%>/edit" name="Edit" type="button" class="btn btn-default btn-lg btn-block">Edit</button>
+  <button href="http://localhost3000/delete_photo/<%= photo_singular.id %>" name="Delete" type="button" class="btn btn-default btn-lg btn-block">Details</button>
+
 </div>
 
 <% end %>
+</body>
+</html>
