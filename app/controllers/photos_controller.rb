@@ -12,7 +12,8 @@ class PhotosController < ApplicationController
     new_photo.caption = cap
     new_photo.save
     # render("photos/create_row.html.erb") WE DONT USE RENDER, BECAUSE WE DONT WANT TO RENDER A NEW HTML, BUT RE DIRECT TO ANOTHER ACTION
-    redirect_to("/photos/#{new_photo.id}")
+    # redirect_to("/photos/#{new_photo.id}")
+    redirect_to("/photos")
   end
 
   def index
@@ -55,7 +56,9 @@ class PhotosController < ApplicationController
   end
 
   def destroy_row
-    render("photos/destroy_row.html.erb")
+    the_id=params[:id]
+    Photo.find(the_id).destroy
+    redirect_to("/photos")
   end
 
 
