@@ -6,6 +6,7 @@
   <style>
   body{
     max-width: 900px;
+    padding-left: 100px;
   }
   /*p    {color: red;}*/
   </style>
@@ -14,19 +15,28 @@
 
   <h1>All Photos</h1>
 
+  <a href="/photos/new">
+    Add a new photo
+  </a>
+
   <% @list_of_all_my_photos.each do |photo_singular| %>
   <!-- equal sign means evaluate and spit out the result in the html -->
-  <img src="<%= photo_singular.source %>">
-  <!-- <p>
-  <%= photo_singular.caption %>
-</p> -->
-<div>
-  <button name="Show Details" type="button" class="btn btn-default btn-lg btn-block">Show Details</button>
-  <button href="http://localhost3000/photos/<%= photo_singular.id%>/edit" name="Edit" type="button" class="btn btn-default btn-lg btn-block">Edit</button>
-  <button href="http://localhost3000/delete_photo/<%= photo_singular.id %>" name="Delete" type="button" class="btn btn-default btn-lg btn-block">Details</button>
+  <div class="thumbnail">
+    <img src="<%= photo_singular.source %>">
 
-</div>
+    <div class="caption">
+      <a href="/photos/<%= photo_singular.id%>" class="btn btn-default btn-block">
+        Show Details
+      </a>
+      <a href="/photos/<%= photo_singular.id%>/edit" class="btn btn-default btn-block">
+        Edit
+      </a>
+      <a href="/delete_photo/<%= photo_singular.id%>" class="btn btn-default btn-block">
+        Delete
+      </a>
+    </div>
+  </div>
+  <% end %>
 
-<% end %>
 </body>
 </html>
